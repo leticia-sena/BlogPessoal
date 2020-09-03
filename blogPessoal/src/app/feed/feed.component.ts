@@ -3,7 +3,6 @@ import { Postagem } from '../model/Postagem';
 import { Tema } from '../model/Tema';
 import { PostagemService } from '../service/postagem.service';
 import { TemaService } from '../service/tema.service';
-import { Subscriber } from 'rxjs';
 
 @Component({
   selector: 'app-feed',

@@ -16,10 +16,10 @@ export class PostagemService {
   }
 
   getAllPostagens(){
-    return this.http.get("http://localhost:8080/postagens", this.token)
+    return this.http.get("http://localhost:9000/postagens", this.token)
   }
 
   postPostagem(postagem: Postagem){
-    return this.http.post("http://localhost:8080/postagens", postagem, this.token)
+    return this.http.post("http://localhost:9000/postagens", postagem, this.token)
   }
 }

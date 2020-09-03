@@ -10,7 +10,7 @@ import { PostTemaComponent } from './post-tema/post-tema.component';
 const routes: Routes = [
   { path: "", redirectTo:"home", pathMatch: "full"},
   { path: "home", component: HomeComponent},
-  { path:"feed", component: FeedComponent},
+  { path: "feed", component: FeedComponent},
   { path: "login", component: LoginComponent },
   { path: "cadastro", component: CadastroComponent},
   { path: "cadastro-tema", component: PostTemaComponent}
