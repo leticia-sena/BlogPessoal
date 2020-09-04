@@ -23,7 +23,7 @@
                 <div class="col-md-6 ">
                     <div class="form-group m-0 ">
 
-                        <label class="text-monospace " for="tema ">Escolha um tema ou <a routerlink="/cadastro-tema">Cadastre um novo</a></label>
+                        <label class="text-monospace " for="tema ">Escolha um tema ou <a routerLink="/cadastro-tema">Cadastre um novo</a></label>
                         <select name="tema " id='tema' class="form-control " [(ngModel)]="idTema " (change)="findByIdTema()">
                         <option *ngFor="let item of listaTemas " value={{item.id}}>
                           {{item.descricao}}                     
@@ -71,16 +71,9 @@
                                     </div>
                                     <div class="col-md-4 d-flex justify-content-end ">
 
-                                        <button class="mr-3 btn btn-outline-info ">
-                                            Editar
-                                        </button>
+                                        <button class="mr-3 btn btn-outline-info" [routerLink]="['/edita-post', item.id]">Editar</button>
 
-                                        <button class=" btn btn-outline-danger ml-3 ">
-                                            Apagar
-                                        </button>
-                                        <button class="mr-3 btn btn-outline-info" [routerLink]="['edita-post', item.id]">Editar</button>
-
-                                        <button class=" btn btn-outline-danger ml-3 ">Apagar</button>
+                                        <button class=" btn btn-outline-danger ml-3" [routerLink]="['/delete-post', item.id]">Apagar</button>
 
                                     </div>
                                 </div>
