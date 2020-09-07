@@ -4,6 +4,7 @@ import { Tema } from '../model/Tema';
 import { PostagemService } from '../service/postagem.service';
 import { TemaService } from '../service/tema.service';
 import { AlertasService } from '../service/alertas.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-feed',
@@ -27,10 +28,20 @@ export class FeedComponent implements OnInit {
   constructor(
     private postagemService: PostagemService,
     private temaService: TemaService,
-    private alert: AlertasService
+    private alert: AlertasService,
+    private router: Router
   ) { }
 
   ngOnInit() {
+// INICIO Código para impedir o usuario de entrar quando não estiver logado
+    let token = localStorage.getItem("token")
+
+    if(token == null){
+      this.router.navigate(["/login"])
+      this.alert.showAlertInfo("Faça o login antes de entrar no feed...")
+    }
+// FIM Código para impedir o usuario de entrar quando não estiver logado
+
     window.scroll(0, 0)
 
     this.findAllPostagens()
